@@ -8,9 +8,9 @@
 [![Xposed](https://img.shields.io/badge/Framework-Xposed-yellow)](https://github.com/rovo89/Xposed)
 [![Discord](https://img.shields.io/badge/Discord-Community-5865F2?logo=discord)](https://discord.gg/android-re)
 
-> Complete Android reverse engineering guide — from static analysis to dynamic hooking, covering jadx, apktool, Frida, Xposed, Smali patching, native library analysis, and anti-debug bypasses.
+> Android reverse engineering from static analysis to dynamic hooking — jadx, apktool, Frida, Xposed, Smali patching, native library analysis, and anti-debug bypasses.
 
-Inspired by the work of ispointer and the broader Android RE community, this repository provides practical workflows, code snippets, and tool configurations for dissecting Android applications at every layer.
+Inspired by ispointer and the Android RE community. This repo is everything I wish I had when I started reverse engineering Android apps. Practical workflows, copy-paste code snippets, and tool configs that actually work.
 
 ---
 
@@ -82,7 +82,7 @@ pip install frida-tools frida objection
 
 ## APK Analysis Workflow
 
-Step-by-step process for dissecting any Android APK.
+The step-by-step process I follow for every APK. Works every time.
 
 ```
 APK File
@@ -176,7 +176,7 @@ aapt dump permissions target.apk
 
 ## Smali Basics
 
-Smali is the assembly language for Android's Dalvik/ART virtual machine. Understanding Smali enables precise APK patching.
+Smali is the assembly language for Android's Dalvik/ART virtual machine. Learning Smali is the difference between "I can read the code" and "I can change the code."
 
 ### Smali Syntax Reference
 
@@ -254,7 +254,7 @@ Smali is the assembly language for Android's Dalvik/ART virtual machine. Underst
 
 ## Frida Dynamic Instrumentation
 
-Frida injects JavaScript into running processes for real-time hooking and tracing.
+Frida injects JavaScript into running processes for real-time hooking and tracing. This is the tool I reach for first on almost every engagement.
 
 ### Setup
 
@@ -383,7 +383,7 @@ android hooking watch file_access
 
 ## Xposed Framework
 
-Xposed allows system-wide hooking by modifying the Android runtime (ART) at the framework level.
+Xposed allows system-wide hooking by modifying the Android runtime (ART) at the framework level. LSPosed is what you want — the original Xposed is basically dead.
 
 ### Installation (Rooted Devices)
 
@@ -462,7 +462,7 @@ XposedHelpers.findAndHookMethod(
 
 ## Kernel Hooking Concepts
 
-For deep system-level instrumentation when userspace hooks aren't sufficient.
+For deep system-level instrumentation when userspace hooks aren't enough. Most people won't need this, but when you do, there's no substitute.
 
 ### Linux Kernel Tracepoints
 
@@ -529,7 +529,7 @@ int trace_open(struct pt_regs *ctx) {
 
 ## DEX File Format
 
-Understanding the Dalvik Executable format is essential for advanced patching.
+Understanding the Dalvik Executable format is essential for advanced patching. Most people skip this and it bites them later.
 
 ### DEX Structure Overview
 
@@ -600,7 +600,7 @@ dexdump -l plain target.dex     # Human-readable
 
 ## Native Library Analysis
 
-Most security-critical code lives in compiled native libraries (.so files).
+Most security-critical code lives in compiled native libraries (.so files). This is where the interesting stuff hides.
 
 ### Ghidra Workflow
 
@@ -701,7 +701,7 @@ grep -c "ptrace" libtarget.so
 
 ## Anti-Debug Bypasses
 
-Common anti-debugging techniques and how to circumvent them.
+Every good app has anti-debugging. Here's how to get around the common ones. I use these scripts on almost every engagement.
 
 ### ptrace Self-Attach Detection
 
@@ -792,7 +792,7 @@ Java.perform(function() {
 
 ## Practice Apps
 
-Legal targets for honing your Android RE skills.
+Legal targets for honing your Android RE skills. Start with DIVA if you're new.
 
 | App | Focus Area | Difficulty | Download |
 |-----|-----------|------------|----------|
