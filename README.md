@@ -10,7 +10,7 @@
 
 > Android reverse engineering from static analysis to dynamic hooking — jadx, apktool, Frida, Xposed, Smali patching, native library analysis, and anti-debug bypasses.
 
-Inspired by ispointer and the Android RE community. This repo is everything I wish I had when I started reverse engineering Android apps. Practical workflows, copy-paste code snippets, and tool configs that actually work.
+Everything I wish I had when I started reverse engineering Android apps. Practical workflows, copy-paste code snippets, and tool configs that actually work.
 
 ---
 
